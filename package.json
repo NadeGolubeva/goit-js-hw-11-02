@@ -7,7 +7,7 @@
     "start": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /goit-js-hw-11-02/",
     "deploy": "gh-pages -d dist /goit-js-hw-11-02/",
-    "predeploy": "npm run build"
+    "predeploy": "npm run build -- --public-url /goit-js-hw-11-02"
   },
   "repository": {
     "type": "git",
@@ -31,7 +31,8 @@
     "buffer": "^6.0.3",
     "parcel": "^2.6.0",
     "parcel-reporter-clean-dist": "^1.0.4",
-    "posthtml-include": "^1.7.4"
+    "posthtml-include": "^1.7.4",
+    "sass": "^1.60.0"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead"
 }
