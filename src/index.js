@@ -19,6 +19,7 @@ refs.form.addEventListener("submit", onSubmit);
 refs.btnLoadMore.addEventListener("click", onLoadMoreClick);
 
 let searchPhotos = "";
+let page = "";
 
 function onSubmit(e) {
   e.preventDefault();
