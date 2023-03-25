@@ -526,6 +526,7 @@ refs.btnLoadMore.classList.add("is-hidden");
 refs.form.addEventListener("submit", onSubmit);
 refs.btnLoadMore.addEventListener("click", onLoadMoreClick);
 let searchPhotos = "";
+let page = "";
 function onSubmit(e) {
     e.preventDefault();
     page = 1;
@@ -543,7 +544,7 @@ function onLoadMoreClick(e) {
     apiBase(searchPhotos2, page);
 }
 // function onInput(e) { console.log(e); }
-async function apiBase(searchPhotos3, page) {
+async function apiBase(searchPhotos3, page1) {
     const BASE_URL = "https://pixabay.com/api/";
     const options = {
         params: {
@@ -552,7 +553,7 @@ async function apiBase(searchPhotos3, page) {
             image_type: "photo",
             orientation: "horizontal",
             safesearch: "true",
-            page: page,
+            page: page1,
             per_page: 40
         }
     };
@@ -565,7 +566,7 @@ async function apiBase(searchPhotos3, page) {
             (0, _notiflixDefault.default).Notify.info("We're sorry, but you've reached the end of search results.");
             refs.btnLoadMore.classList.add("is-hidden");
         }
-        if (page === 1 && response.data.hits.length > 1) {
+        if (page1 === 1 && response.data.hits.length > 1) {
             const amount = response.data.total;
             (0, _notiflixDefault.default).Notify.success(`"Hooray! We found ${amount} images. `);
         }
